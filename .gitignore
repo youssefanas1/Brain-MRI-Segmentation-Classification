@@ -9,3 +9,5 @@ NTIENV/
 *.jpeg
 
 *.toml
+
+*.ipynb
