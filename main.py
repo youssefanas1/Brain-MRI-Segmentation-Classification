@@ -3,8 +3,33 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 import os
+import base64
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
+
+# =======================
+# background image
+# =======================
+def add_bg_from_local(image_file):
+    """إضافة خلفية من صورة محلية"""
+    with open(image_file, "rb") as f:
+        encoded_string = base64.b64encode(f.read()).decode()
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{encoded_string}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# استدعاء الخلفية
+add_bg_from_local("background.jpg")
 
 # =======================
 # عنوان التطبيق
