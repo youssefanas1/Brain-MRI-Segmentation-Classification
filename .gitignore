@@ -2,3 +2,8 @@ NTIENV/
 
 *.keras
 
+*.h5
+
+*.jpg
+
+*.jpeg
